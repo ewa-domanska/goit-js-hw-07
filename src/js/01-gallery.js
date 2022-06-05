@@ -22,9 +22,15 @@ gallery.innerHTML = html;
 function showBigPicture(e) {
     e.preventDefault();
     let image = e.target;
-    const bigPicture = basicLightbox.create(`<img src="${image.dataset.source}"/>`)
+    const bigPictureModal = basicLightbox.create(`<img src="${image.dataset.source}"/>`)
 
-    bigPicture.show()
+    bigPictureModal.show();
+
+    gallery.addEventListener("keydown", (e) => {
+        if (e.keyCode === 27) {
+            bigPictureModal.close();
+        }
+    })
 }
 
 gallery.addEventListener("click", showBigPicture);
