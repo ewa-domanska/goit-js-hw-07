@@ -1,4 +1,4 @@
-import { galleryItems } from './gallery-items.js';
+import {galleryItems} from './gallery-items.js';
 // Change code below this line
 
 let html = "";
@@ -10,3 +10,8 @@ for (const galleryItem of galleryItems) {
 }
 
 gallery.innerHTML = html;
+
+new SimpleLightbox('.gallery a', {
+    captionDelay: 250,
+    captionsData: "alt"
+});
