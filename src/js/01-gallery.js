@@ -1,4 +1,5 @@
 import {galleryItems} from './gallery-items.js';
+
 // Change code below this line
 
 let html = "";
@@ -21,8 +22,9 @@ gallery.innerHTML = html;
 function showBigPicture(e) {
     e.preventDefault();
     let image = e.target;
-    console.log(image.dataset.source)
+    const bigPicture = basicLightbox.create(`<img src="${image.dataset.source}"/>`)
 
+    bigPicture.show()
 }
 
-gallery.addEventListener("click", showBigPicture)
+gallery.addEventListener("click", showBigPicture);
